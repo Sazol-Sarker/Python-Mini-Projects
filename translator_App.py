@@ -5,13 +5,7 @@ from tkinter import ttk,messagebox
 
 root=Tk() 
 root.title("Language Translator")
-root.geometry("1050x400")
-
-# screen_width=root.winfo_screenwidth()
-# screen_height=root.winfo_screenheight() 
-# x=(screen_width-root.winfo_width())/2
-# y=(screen_height-root.winfo_height())/2
-# root.geometry("+{}+{}".format(x,y))
+root.geometry("1050x400+200+120")
 
 
 def translate():
