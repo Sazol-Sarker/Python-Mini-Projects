@@ -29,12 +29,13 @@ from googletrans import Translator
 # output: meaning,synonym,antonym & bangla translated
 
 def meaning():
-    dictionary=Dictionary()
-    translator=Translator()
     word=txt_input.get()
-    d=dictionary.meaning(word)    
+    dictionary=Dictionary(word)
+    translator=Translator()
+    d=dictionary.meanings(word)    
 
     if word=="" or d is None:
+    # if word=="":
         messagebox.showerror('Dictionary','Please enter a valid word')
     else:
         meaning.delete("1.0","end")
@@ -42,13 +43,13 @@ def meaning():
         antonyms.delete("1.0","end")
         bangla.delete("1.0","end")
 
-        meaning.insert('end',d)
-        s=dictionary.synonym(word)
+        meaning.insert('end',word)
+        s=dictionary.synonyms(word)
         synonyms.insert('end',s)
-        a=dictionary.antonym(word)
+        a=dictionary.antonyms(word)
         antonyms.insert('end',a)
        
-        tran=translator.translate(word,dest='tran')
+        tran=translator.translate(word,dest='bn')
         bangla.insert('end',tran.text)
 
 
@@ -106,5 +107,14 @@ btn_refresh.pack(side=LEFT,padx=10,pady=20)
 btn_exit.pack(side=LEFT,padx=10,pady=20)
 
 vsb=Scrollbar(root,orient="vertical")
+vsb.configure(command=meaning.yview)
+meaning['yscrollcommand']=vsb.set 
+vsb.grid(row=3,column=2,sticky='nsew')
+
+vsb1=Scrollbar(root,orient="vertical")
+vsb1.configure(command=synonyms.yview)
+meaning['yscrollcommand']=vsb1.set 
+vsb1.grid(row=4,column=2,sticky='nsew')
+
 
 root.mainloop()
