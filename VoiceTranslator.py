@@ -23,8 +23,16 @@ playsound.playsound("audiobn.mp3")
 
 #hindi audio
 translator1=googletrans.Translator()
-translation1=translator1.translate(text,dest="bn")
+translation1=translator1.translate(text,dest="hi")
 print(translation1.text)
 converted_audio1=gtts.gTTS(translation1.text,lang="hi")
 converted_audio1.save("audiohi.mp3")
 playsound.playsound("audiohi.mp3")
+
+#hindi audio
+translator2=googletrans.Translator()
+translation2=translator1.translate(text,dest="fr")
+print(translation2.text)
+converted_audio1=gtts.gTTS(translation2.text,lang="fr")
+converted_audio1.save("audiofr.mp3")
+playsound.playsound("audiofr.mp3")
