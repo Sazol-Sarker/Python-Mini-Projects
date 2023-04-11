@@ -1,7 +1,7 @@
 
 # Python Desktop/Console Apps
 
-Here is 3 python desltop mini proojects
+Here is 3 python desktop mini projects
 
 **1.Text to Text Language Translator**
 
